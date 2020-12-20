@@ -1,0 +1,20 @@
+{
+	"name": "spotify-oauth-playback-test",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "embedded.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"btoa": "^1.2.1",
+		"express": "^4.17.1",
+		"form-data": "^3.0.0",
+		"node-fetch": "^2.6.1"
+	}
+}
