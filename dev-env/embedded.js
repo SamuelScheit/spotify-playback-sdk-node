@@ -5044,6 +5044,7 @@
 			}),
 			(n.prototype._sendLog = function (t, e) {
 				var i = !this._allowUnauthenticated || !t.allowUnauthenticated || this._transport.isAuthenticated();
+				console.log("_sendLog", e);
 				return this._transport
 					.request(this._endpoint + t.url, {
 						method: "POST",

@@ -25,6 +25,7 @@
 			window.onSpotifyWebPlaybackSDKReady = async () => {
 				player = new Spotify.Player({
 					name: "Web",
+					volume: 0.5,
 					getOAuthToken(cb) {
 						return cb(token);
 					},
@@ -52,13 +53,23 @@
 				player.addListener("ready", async ({ device_id }) => {
 					console.log("Ready with Device ID", device_id);
 
-					await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
-						method: "PUT",
-						body: JSON.stringify({}),
+					fetch("https://api.spotify.com/v1/me/player", {
 						headers: {
 							"Content-Type": "application/json",
-							Authorization: `Bearer ${token}`,
+							Authorization: "Bearer " + token,
 						},
+						method: "PUT",
+
+						body: JSON.stringify({ device_ids: [device_id], play: true }),
+					}).then(() => {
+						return fetch("https://api.spotify.com/v1/me/player/play?device_id=" + device_id, {
+							headers: {
+								"Content-Type": "application/json",
+								Authorization: "Bearer " + token,
+							},
+							method: "PUT",
+							body: JSON.stringify({}),
+						});
 					});
 				});
 
