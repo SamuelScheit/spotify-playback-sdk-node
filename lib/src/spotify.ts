@@ -176,7 +176,7 @@ class SpotifyPlayer extends EventEmitter {
 		}, this.opts);
 	}
 
-	async disconnect() {
+	async disconnect(): Promise<void> {
 		await this.page.evaluate(() => {
 			return window.player.disconnect();
 		});
@@ -188,7 +188,7 @@ class SpotifyPlayer extends EventEmitter {
 		});
 	}
 
-	setName(name: string) {
+	setName(name: string): Promise<void> {
 		return this.page.evaluate((n) => {
 			return window.player.setName(n);
 		}, name);
@@ -200,43 +200,43 @@ class SpotifyPlayer extends EventEmitter {
 		});
 	}
 
-	setVolume(volume: string) {
+	setVolume(volume: string): Promise<void> {
 		return this.page.evaluate((v) => {
 			return window.player.setVolume(v);
 		}, volume);
 	}
 
-	pause() {
+	pause(): Promise<void> {
 		return this.page.evaluate(() => {
 			return window.player.pause();
 		});
 	}
 
-	resume() {
+	resume(): Promise<void> {
 		return this.page.evaluate(() => {
 			return window.player.resume();
 		});
 	}
 
-	togglePlay() {
+	togglePlay(): Promise<void> {
 		return this.page.evaluate(() => {
 			return window.player.togglePlay();
 		});
 	}
 
-	seek(position_ms: number) {
+	seek(position_ms: number): Promise<void> {
 		return this.page.evaluate((pos) => {
 			return window.player.seek(pos);
 		}, position_ms);
 	}
 
-	previousTrack() {
+	previousTrack(): Promise<void> {
 		return this.page.evaluate(() => {
 			return window.player.previousTrack();
 		});
 	}
 
-	nextTrack() {
+	nextTrack(): Promise<void> {
 		return this.page.evaluate(() => {
 			return window.player.nextTrack();
 		});

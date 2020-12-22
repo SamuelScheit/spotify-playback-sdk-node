@@ -1,6 +1,6 @@
 {
 	"name": "spotify-playback-sdk-node",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"main": "dist/spotify.js",
 	"types": "dist/spotify.d.js",
 	"scripts": {
