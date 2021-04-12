@@ -5,7 +5,6 @@ import { EventEmitter } from "events";
 import fs from "fs";
 import { execSync } from "child_process";
 import path from "path";
-import { ERANGE } from "constants";
 
 export function getChromePath() {
 	function check(path: string) {

@@ -73,7 +73,7 @@ class SpotifyPlayer extends EventEmitter {
 	page: Page;
 	opts: PlayerOptions;
 
-	constructor // please use the SpotifyPlaybackSDK.createPlayer() function
+	constructor      // use the SpotifyPlaybackSDK.createPlayer() function
 	getAudio()       : Promise<import("puppeteer-stream").Stream>;
 	connect()        : Promise<boolean>;
 	disconnect()     : Promise<void>;
