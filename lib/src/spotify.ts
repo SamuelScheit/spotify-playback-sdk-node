@@ -13,7 +13,7 @@ export function getChromePath() {
 		} catch (error) {}
 	}
 	try {
-		var linux = execSync("which google-chrome-stable", { encoding: "utf8" });
+		var linux = execSync("which google-chrome-stable", { encoding: "utf8" }).trim();
 	} catch (error) {}
 
 	return (
